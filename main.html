@@ -24,7 +24,6 @@
         $.get('http://81.68.122.122:8001/world2.json', function (result) {
             geoJson = result
         });
-
         $.ajax({
             type: "GET",
             url: "http://localhost:8181/getdata",
@@ -50,6 +49,22 @@
                     subtext: '统计数据来自用友',
                     sublink: 'https://api.yonyoucloud.com/apilink/tempServicePages/260492aa-6dbd-49f6-b82a-8a463b73ac33_true.html'
                 },
+                {
+                    text: '确诊人数总计: ' + data.confirmedCount + '\n治愈人数总计: ' + data.curedCount + '\n死亡人数总计: ' + data.deadCount,
+                    subtext: '更新时间: ' + data.updateTime,
+                    x: 'right',
+                    y: 'top',
+                    textAlign: 'left',
+                    textStyle: { 
+                        fontFamily: 'Arial',
+                        fontSize: 18,
+                        fontStyle: 'normal',
+                        fontWeight: 'normal',
+                    },
+                    subtextStyle: {
+                        fontSize: 14,
+                    },
+                }
             ],
             tooltip: {
                 trigger: 'item',
@@ -87,7 +102,10 @@
                 calculable: true,
 
                 inRange: {
-                    color: ['lightskyblue', 'yellow', 'orangered']
+                    color: ['#50A3BA', '#8EB197', '#CBC074', '#E7AF62', '#E07E5F', '#D94E5D']
+                },
+                outOfRange: {
+                    color: ['red'],
                 },
             },
             series: [
@@ -99,182 +117,7 @@
                     // label: {
                     //     show: false,
                     // },
-                    data: [
-                        {
-                            "curedCount": 1317612,
-                            "name": "伊朗",
-                            "deadCount": 59184,
-                            "value": 1542076
-                        },
-                        {
-                            "curedCount": 1047676,
-                            "name": "印度尼西亚",
-                            "deadCount": 33788,
-                            "value": 1243646
-                        },
-                        {
-                            "curedCount": 10644858,
-                            "name": "印度",
-                            "deadCount": 155913,
-                            "value": 10937320
-                        },
-                        {
-                            "curedCount": 121347,
-                            "name": "哈萨克斯坦",
-                            "deadCount": 3246,
-                            "value": 251959
-                        },
-                        {
-                            "curedCount": 248720,
-                            "name": "黎巴嫩",
-                            "deadCount": 4092,
-                            "value": 343601
-                        },
-                        {
-                            "curedCount": 2496833,
-                            "name": "土耳其",
-                            "deadCount": 27738,
-                            "value": 2609359
-                        },
-                        {
-                            "curedCount": 681249,
-                            "name": "以色列",
-                            "deadCount": 5473,
-                            "value": 738629
-                        },
-                        {
-                            "curedCount": 489254,
-                            "name": "孟加拉国",
-                            "deadCount": 8314,
-                            "value": 541877
-                        },
-                        {
-                            "curedCount": 235082,
-                            "name": "马来西亚",
-                            "deadCount": 1030,
-                            "value": 274875
-                        },
-                        {
-                            "curedCount": 32944,
-                            "name": "巴勒斯坦",
-                            "deadCount": 561,
-                            "value": 65802
-                        },
-                        {
-                            "curedCount": 512375,
-                            "name": "菲律宾",
-                            "deadCount": 11673,
-                            "value": 555163
-                        },
-                        {
-                            "curedCount": 2057,
-                            "name": "塞浦路斯",
-                            "deadCount": 225,
-                            "value": 32707
-                        },
-                        {
-                            "curedCount": 611036,
-                            "name": "伊拉克",
-                            "deadCount": 13204,
-                            "value": 653557
-                        },
-                        {
-                            "curedCount": 530597,
-                            "name": "巴基斯坦",
-                            "deadCount": 12488,
-                            "value": 567261
-                        },
-                        {
-                            "curedCount": 393494,
-                            "name": "日本",
-                            "deadCount": 7102,
-                            "value": 420408
-                        },
-                        {
-                            "curedCount": 329511,
-                            "name": "约旦",
-                            "deadCount": 4491,
-                            "value": 352219
-                        },
-                        {
-                            "curedCount": 347366,
-                            "name": "阿联酋",
-                            "deadCount": 1073,
-                            "value": 361877
-                        },
-                        {
-                            "curedCount": 168420,
-                            "name": "科威特",
-                            "deadCount": 1019,
-                            "value": 180505
-                        },
-                        {
-                            "curedCount": 149031,
-                            "name": "卡塔尔",
-                            "deadCount": 256,
-                            "value": 159053
-                        },
-                        {
-                            "curedCount": 75896,
-                            "name": "韩国",
-                            "deadCount": 1544,
-                            "value": 85567
-                        },
-                        {
-                            "curedCount": 130944,
-                            "name": "缅甸",
-                            "deadCount": 3192,
-                            "value": 141690
-                        },
-                        {
-                            "curedCount": 106412,
-                            "name": "巴林",
-                            "deadCount": 410,
-                            "value": 114361
-                        },
-                        {
-                            "curedCount": 129543,
-                            "name": "阿曼",
-                            "deadCount": 1544,
-                            "value": 137929
-                        },
-                        {
-                            "curedCount": 71176,
-                            "name": "斯里兰卡",
-                            "deadCount": 422,
-                            "value": 77906
-                        },
-                        {
-                            "curedCount": 8520,
-                            "name": "叙利亚",
-                            "deadCount": 984,
-                            "value": 14951
-                        },
-                        {
-                            "curedCount": 161105,
-                            "name": "亚美尼亚",
-                            "deadCount": 3155,
-                            "value": 169597
-                        },
-                        {
-                            "curedCount": 48433,
-                            "name": "阿富汗",
-                            "deadCount": 2428,
-                            "value": 55540
-                        },
-                        {
-                            "curedCount": 259228,
-                            "name": "格鲁吉亚",
-                            "deadCount": 3390,
-                            "value": 266948
-                        },
-                        {
-                            "curedCount": 364646,
-                            "name": "沙特阿拉伯",
-                            "deadCount": 6445,
-                            "value": 373702
-                        }
-                    ],
+                    data: data.country,
                     // 自定义名称映射
                     nameMap: {
                         "Cote d'Ivoire": "科特迪瓦",
